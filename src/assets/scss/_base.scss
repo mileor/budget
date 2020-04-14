@@ -1,0 +1,128 @@
+// General colors
+$blue: #0065FF;
+$blue-light: #DEEBFF;
+$black: #172B4D;
+$white: #FFFFFF;
+$gray-light: #F4F5F7;
+$green: #36B37E;
+$red: #FF5630;
+$gray: #A5ADBA;
+
+// Themes colors
+[theme='light'] {
+  --bg-color: #DEEBFF;
+  --main: #0065FF;
+  --text-color: #172B4D;
+  --box-bg: #FFFFFF;
+  --border-color: #F4F5F7;
+  --border-color-dark: #A5ADBA;
+}
+
+[theme='dark'] {
+  --bg-color: #172B4D;
+  --main: #4C9AFF;
+  --text-color: #FAFBFC;
+  --box-bg: #253858;
+  --border-color: #42526E;
+  --border-color-dark: #505F79;
+}
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700,800&display=swap');
+
+%text-regular {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+}
+
+%text-medium {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+%text-bold {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+}
+
+// Transition
+%base-transition {
+  transition: 0.3s ease-in-out;
+}
+
+
+// Basic styles
+body {
+  text-align: center;
+  font-size: 20px;
+  line-height: 28px;
+  @extend %text-regular;
+  padding: 60px 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+h1 {
+  @extend %text-medium;
+  font-size: 26px;
+  line-height: 36px;
+  padding-bottom: 20px;
+}
+
+p {
+  padding-bottom: 24px;
+}
+
+input {
+  outline: none;
+  width: 52%;
+  height: 36px;
+  font-size: 18px;
+  @extend %text-regular;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border: none;
+  border-bottom: 2px solid $gray-light;
+  @extend %base-transition;
+  background-color: transparent;
+  color: var(--text-color);
+  border-radius: 0;
+
+  &:focus {
+    border-bottom-color:  var(--main);
+  }
+
+  &::placeholder {
+    color: $gray;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+button {
+  height: 36px;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+  @extend %text-regular;
+  @extend %base-transition;
+  cursor: pointer;
+}
+
+.container {
+  width: 720px;
+  margin: 0 auto;
+}
